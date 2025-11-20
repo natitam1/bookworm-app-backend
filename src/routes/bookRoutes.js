@@ -87,10 +87,10 @@ router.delete("/:id", protectRoute, async (req, res) => {
   }
 });
 
-router.get("/users", async (req, res) => {
+router.get("/users", protectRoute, async (req, res) => {
   try {
     const books = await Book.find({ user: req.user._id }).sort({
-      createAt: -1,
+      createdAt: -1,
     });
     res.json(books);
   } catch (error) {

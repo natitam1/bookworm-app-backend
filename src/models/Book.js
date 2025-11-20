@@ -11,11 +11,11 @@ const bookSchema = new mongoose.Schema(
       required: true,
     },
     image: {
-      type: String,
+      type: String, // Cloudinary URL
       required: true,
     },
-    image: {
-      type: Number,
+    rating: {
+      type: Number, // rating from 1 to 5
       required: true,
       min: 1,
       max: 5,
